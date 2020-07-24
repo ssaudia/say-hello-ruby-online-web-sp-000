@@ -3,7 +3,7 @@ require_relative './spec_helper'
 describe "say_hello" do
 
   it 'accepts an argument of a name and prints out Hello with that Name' do
-    expect($stdout).to receive puts with("Hello Kent Beck!")
+    expect($stdout).to receive (:puts).with("Hello Kent Beck!")
     def say_hello (Kent_Beck)
       puts #{Kent Beck}
   end
@@ -11,5 +11,7 @@ describe "say_hello" do
   it 'defaults to Ruby Programmer when no name is passed in' do
     expect($stdout).to receive(:puts).with("Hello Ruby Programmer!")
     say_hello()
+    def say_hello (Kent_Beck)
+      puts #{Kent Beck}
   end
 end
